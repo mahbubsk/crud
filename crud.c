@@ -50,13 +50,19 @@ void index_of_array(){
 }
 
 void search_from_array(){
-    int search_number;
+    int search_number,spy=false;
     scanf("%d",&search_number);
     for(i=0; i<array_size; i++){
         if(array[i]==search_number){
             printf("array[%d]=%d\n\n",i,search_number);
+        } else{
+            spy=true;
         }
     }
+    if(spy==true){
+        printf("!invalid input\n");
+    }
+    
 }
 
 void update_value(){
