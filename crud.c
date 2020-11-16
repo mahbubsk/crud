@@ -88,6 +88,36 @@ void update_value(){
 }
 
 
+void delete_from_array(){
+        int delete_value,delete_index;
+        int delete_direction;
+        printf("[1] Delete Via Index\n");
+        printf("[2] Delete Via Value\n");
+        
+        scanf("%d",&delete_direction);
+        if (delete_direction == 1){
+            printf("Enter index:");
+            scanf("%d", &delete_index);
+            for (i = delete_index; i < array_size; i += 1){
+                    array[i] = array[i + 1];
+                }
+                array_size -= 1;
+            } else if (delete_direction == 2){
+                printf("Enter Value:");
+                scanf("%d", &delete_value);
+                for (int i = 0; i < array_size; i++){
+                    if (delete_value == array[i]){
+                        for (i = i; i <array_size; i++){
+                            array[i] = array[i + 1];
+                        }
+                    }
+ 
+                }
+            array_size--;
+        }
+}
+
+
 int main(){
     int is_proceed=false;
     int is_proceed2=false;
@@ -145,7 +175,7 @@ int main(){
             } else if(direction==3){
                 update_value();
             } else if(direction==4){
-                printf("Delete\n");
+                delete_from_array();
             }
         }
     }
